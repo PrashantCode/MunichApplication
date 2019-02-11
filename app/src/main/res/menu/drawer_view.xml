@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_munich"
+            android:icon="@mipmap/ic_launcher_round"
+            android:title="Munich"/>
+        <item
+            android:id="@+id/nav_stuttgart"
+            android:icon="@mipmap/ic_launcher_round"
+            android:title="Stuttgart"/>
+        <item
+            android:id="@+id/nav_advertisements"
+            android:icon="@mipmap/ic_launcher_round"
+            android:title="Advertisements"/>
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@mipmap/ic_launcher_round"
+            android:title="Setting"/>
+    </group>
+</menu>
