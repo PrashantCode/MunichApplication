@@ -1,11 +1,19 @@
 package com.android.munichapplication.weather
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import android.support.v7.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.android.munichapplication.R
 import kotlinx.android.synthetic.main.activity_m.*
+import kotlinx.android.synthetic.main.activity_munich.*
 
 class MActivity : AppCompatActivity() {
+
+    private lateinit var navController: NavController
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -28,6 +36,12 @@ class MActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_m)
+
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+
+            bottom_nav.setupWithNavController(navController)
+
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
